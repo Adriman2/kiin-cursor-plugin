@@ -23,7 +23,7 @@ description: >-
 3. For CRM joins, only claim revenue attribution when Kiin tools return it — do not invent CRM fields.
 4. **Writes (critical):** paid/trial unlock mutating tools. Always run the preview / dry-run tool first, show the proposed change, and wait for **explicit user confirm** before applying. LinkedIn must still accept the change after apply. Never mutate spend, status, targeting, creatives, or audiences silently.
 5. New campaigns should be created as **DRAFT** unless the user explicitly asks otherwise and the tool allows it.
-6. Do not invent MCP URLs, OAuth client IDs, or bearer tokens. Live endpoint is `https://mcp.kiin.co/mcp` with OAuth DCR (no secrets in plugin config).
+6. Do not invent MCP URLs, OAuth client IDs, or bearer tokens. Live endpoint is `https://mcp.kiin.co` with OAuth DCR (no secrets in plugin config).
 
 ## Out of scope
 

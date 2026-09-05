@@ -1,7 +1,9 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
   "mcpServers": {
     "kiin": {
-      "url": "https://mcp.kiin.co/mcp"
+      "type": "streamable-http",
+      "url": "https://mcp.kiin.co"
     }
   }
 }

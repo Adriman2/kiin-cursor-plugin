@@ -1,79 +1,79 @@
 # LinkedIn Ads MCP — powered by Kiin
 
-Cursor / Grok Bot plugin for the hosted **LinkedIn Ads MCP**. Read campaign performance **and** write changes (pause/enable, budgets, targeting, creatives, saved audiences, new campaigns as DRAFT). Every write is **preview-then-confirm**, then LinkedIn must accept the change.
+Portable **Agent Plugins 1.0** package (skills + remote MCP) for the hosted LinkedIn Ads MCP. Works with Cursor (also ships `.cursor-plugin/` for marketplace), Claude custom connectors, and other Agent Plugins clients.
+
+**Same MCP everywhere:** `https://mcp.kiin.co` (OAuth DCR, scope `mcp:tools`). No product forks.
+
+Read campaign performance **and** write changes (pause/enable, budgets, targeting, creatives, saved audiences, new campaigns as DRAFT). Every write is **preview-then-confirm**, then LinkedIn must accept.
 
 Connect: [mcp.kiin.co/start](https://mcp.kiin.co/start)
 
-## Install
-
-### Cursor Marketplace (once published)
-
-Search for **LinkedIn Ads MCP** / `linkedin-ads-mcp-kiin`, or:
+## Package layout
 
 ```text
-/add-plugin linkedin-ads-mcp-kiin
+plugin.json                 # Agent Plugins 1.0 manifest
+mcp.json                    # streamable-http → https://mcp.kiin.co
+skills/kiin-linkedin-ads/   # READ + WRITE guidance
+.cursor-plugin/plugin.json  # Cursor marketplace extras (logo)
+assets/logo.png             # Brand mark
 ```
 
-### From this repo (local / review)
+## Install
 
-1. Clone into `~/.cursor/plugins/local/linkedin-ads-mcp-kiin`
-2. Reload the Cursor window
-3. Connect the **kiin** MCP server and complete OAuth
+### Cursor Marketplace
 
-### Manual remote MCP (without the plugin)
+Search **LinkedIn Ads MCP** / `linkedin-ads-mcp-kiin` (submitted for review).
+
+Local load:
+
+```text
+~/.cursor/plugins/local/linkedin-ads-mcp-kiin
+```
+
+### Agent Plugins clients
+
+Point the client at this repo / directory. Root `plugin.json` + `mcp.json` conform to [Agent Plugins 1.0](https://agent-plugins.org/specification).
+
+### Manual remote MCP
 
 ```json
 {
   "mcpServers": {
     "kiin": {
-      "url": "https://mcp.kiin.co/mcp"
+      "type": "streamable-http",
+      "url": "https://mcp.kiin.co"
     }
   }
 }
 ```
 
-Auth is OAuth (dynamic client registration). No API tokens or client secrets belong in config.
+OAuth only — no API tokens or client secrets in config.
 
 ## Auth
 
-1. Install / enable the plugin (or add the remote MCP URL above)
-2. Start a chat and connect **kiin** when prompted
-3. Complete Kiin sign-in at [mcp.kiin.co/start](https://mcp.kiin.co/start)
-4. Connect LinkedIn Ads (and optionally CRM) in onboarding
-
-The MCP advertises OAuth protected-resource metadata and a `registration_endpoint` (`/register`). Scope: `mcp:tools`.
+1. Connect the **kiin** MCP server
+2. Complete Kiin sign-in at [mcp.kiin.co/start](https://mcp.kiin.co/start)
+3. Connect LinkedIn Ads (and optionally CRM)
 
 ## What you can do
 
-**Read**
-- Accounts, campaigns, campaign groups, ads, creatives
-- Spend, CTR, CPL, impressions, clicks, period comparisons
-- CRM-linked revenue after connecting a CRM in Kiin
+**Read** — accounts, campaigns, creatives, spend, CTR/CPL, CRM-linked revenue  
 
-**Write** (paid/trial; every mutation is preview-then-confirm)
-- Pause / enable campaigns and ads
-- Change budgets and targeting
-- Creatives and saved audiences
-- Create new campaigns as **DRAFT** (LinkedIn must accept)
+**Write** (paid/trial; preview-then-confirm) — pause/enable, budgets, targeting, creatives, saved audiences, DRAFT campaigns
 
-Never apply a write silently — show the preview, wait for explicit confirm, then call the apply tool.
+## Directory submissions
+
+- Cursor: submitted via marketplace (see repo history)
+- Claude Connectors: draft in [`docs/claude-connectors-directory.md`](docs/claude-connectors-directory.md)
+- ChatGPT Apps / Plugins: draft in [`docs/chatgpt-apps-sdk.md`](docs/chatgpt-apps-sdk.md)
+
+## Legal
+
+- Privacy: https://kiin.co/privacy-policy · https://web.kiin.co/privacy
+- Terms: https://web.kiin.co/terms
 
 ## Links
 
-- Connect / onboarding: https://mcp.kiin.co/start
 - MCP: https://mcp.kiin.co
 - Product: https://kiin.co
-- Submit: https://cursor.com/marketplace/publish
-- Community: https://cursor.directory
-
-## Repo contents
-
-```text
-.cursor-plugin/plugin.json   # Cursor plugin manifest
-mcp.json                     # Remote MCP → https://mcp.kiin.co/mcp
-skills/kiin-linkedin-ads/    # Agent guidance (read + write)
-assets/logo.png              # Kiin brand mark (marketplace)
-assets/favicon.png           # Brand favicon
-```
-
-No secrets. Credentials stay in the OAuth session.
+- Spec: https://agent-plugins.org/specification

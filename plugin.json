@@ -1,10 +1,12 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "linkedin-ads-mcp-kiin",
   "version": "1.2.0",
-  "description": "LinkedIn Ads MCP — powered by Kiin. Read performance and write campaigns, budgets, targeting, creatives, and audiences (every write is preview-then-confirm).",
+  "description": "LinkedIn Ads MCP \u2014 powered by Kiin. Read performance and write campaigns, budgets, targeting, creatives, and audiences (every write is preview-then-confirm).",
   "author": {
     "name": "Kiin Intelligence",
-    "email": "adrian@kiin.co"
+    "email": "adrian@kiin.co",
+    "url": "https://kiin.co"
   },
   "homepage": "https://mcp.kiin.co",
   "repository": "https://github.com/Adriman2/kiin-cursor-plugin",
@@ -19,7 +21,5 @@
     "crm",
     "kiin",
     "marketing"
-  ],
-  "logo": "assets/logo.png",
-  "mcpServers": "./mcp.json"
+  ]
 }
