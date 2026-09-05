@@ -1,0 +1,22 @@
+{
+  "name": "kiin-intelligence",
+  "version": "1.0.0",
+  "description": "LinkedIn Ads MCP by Kiin Intelligence \u2014 query campaigns, budgets, creatives, and CRM-linked revenue from your ad accounts.",
+  "author": {
+    "name": "Kiin Intelligence",
+    "email": "adrian@kiin.co"
+  },
+  "homepage": "https://mcp.kiin.co",
+  "repository": "https://github.com/Adriman2/kiin-cursor-plugin",
+  "license": "MIT",
+  "keywords": [
+    "linkedin",
+    "ads",
+    "mcp",
+    "advertising",
+    "crm",
+    "kiin",
+    "marketing"
+  ],
+  "logo": "assets/logo.png"
+}
