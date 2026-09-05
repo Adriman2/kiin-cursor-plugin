@@ -1,29 +1,35 @@
-# Kiin Intelligence — Cursor / Grok Bot plugin
+# LinkedIn Ads MCP — powered by Kiin
 
-Thin Cursor plugin that wraps the hosted [Kiin LinkedIn Ads MCP](https://mcp.kiin.co) so agents can query LinkedIn Ads (campaigns, budgets, creatives) and optional CRM revenue joins.
+Cursor / Grok Bot plugin for the hosted **LinkedIn Ads MCP**. Read campaign performance **and** write changes (pause/enable, budgets, targeting, creatives, saved audiences, new campaigns as DRAFT). Every write is **preview-then-confirm**, then LinkedIn must accept the change.
+
+Connect: [mcp.kiin.co/start](https://mcp.kiin.co/start)
 
 ## Install
 
 ### Cursor Marketplace (once published)
 
-Search for **Kiin** / **kiin-intelligence** in Cursor Plugins, or:
+Search for **LinkedIn Ads MCP** / `linkedin-ads-mcp-kiin`, or:
 
 ```text
-/add-plugin kiin-intelligence
+/add-plugin linkedin-ads-mcp-kiin
 ```
 
 ### From this repo (local / review)
 
-1. Clone into `~/.cursor/plugins/local/kiin-intelligence`
+1. Clone into `~/.cursor/plugins/local/linkedin-ads-mcp-kiin`
 2. Reload the Cursor window
 3. Connect the **kiin** MCP server and complete OAuth
 
 ### Manual remote MCP (without the plugin)
 
-Add a remote MCP server with URL:
-
-```text
-https://mcp.kiin.co
+```json
+{
+  "mcpServers": {
+    "kiin": {
+      "url": "https://mcp.kiin.co/mcp"
+    }
+  }
+}
 ```
 
 Auth is OAuth (dynamic client registration). No API tokens or client secrets belong in config.
@@ -32,35 +38,42 @@ Auth is OAuth (dynamic client registration). No API tokens or client secrets bel
 
 1. Install / enable the plugin (or add the remote MCP URL above)
 2. Start a chat and connect **kiin** when prompted
-3. Complete Kiin sign-in (LinkedIn or email) at [mcp.kiin.co/start](https://mcp.kiin.co/start)
-4. Connect LinkedIn Ads (and optionally CRM) in the Kiin onboarding flow
+3. Complete Kiin sign-in at [mcp.kiin.co/start](https://mcp.kiin.co/start)
+4. Connect LinkedIn Ads (and optionally CRM) in onboarding
 
-The MCP resource advertises OAuth protected-resource metadata and a `registration_endpoint` (`/register`). Scope: `mcp:tools`.
+The MCP advertises OAuth protected-resource metadata and a `registration_endpoint` (`/register`). Scope: `mcp:tools`.
 
-## What you can ask
+## What you can do
 
-- Campaign / campaign-group performance and budgets
-- Creative and ad-level breakdowns
-- CRM-linked revenue and conversion context (after connecting a CRM in Kiin)
-- Preview-then-confirm for any write / mutate tools
+**Read**
+- Accounts, campaigns, campaign groups, ads, creatives
+- Spend, CTR, CPL, impressions, clicks, period comparisons
+- CRM-linked revenue after connecting a CRM in Kiin
 
-See `skills/kiin-linkedin-ads/SKILL.md` for agent guidance.
+**Write** (paid/trial; every mutation is preview-then-confirm)
+- Pause / enable campaigns and ads
+- Change budgets and targeting
+- Creatives and saved audiences
+- Create new campaigns as **DRAFT** (LinkedIn must accept)
+
+Never apply a write silently — show the preview, wait for explicit confirm, then call the apply tool.
 
 ## Links
 
-- Product / connect: https://mcp.kiin.co
-- Onboarding: https://mcp.kiin.co/start
-- Homepage: https://kiin.co
-- Publish (Cursor): https://cursor.com/marketplace/publish
-- Community listing: https://cursor.directory
+- Connect / onboarding: https://mcp.kiin.co/start
+- MCP: https://mcp.kiin.co
+- Product: https://kiin.co
+- Submit: https://cursor.com/marketplace/publish
+- Community: https://cursor.directory
 
 ## Repo contents
 
 ```text
 .cursor-plugin/plugin.json   # Cursor plugin manifest
-mcp.json                     # Remote MCP → https://mcp.kiin.co
-skills/kiin-linkedin-ads/    # When / how to use Kiin tools
-assets/logo.png              # Marketplace logo
+mcp.json                     # Remote MCP → https://mcp.kiin.co/mcp
+skills/kiin-linkedin-ads/    # Agent guidance (read + write)
+assets/logo.png              # Kiin brand mark (marketplace)
+assets/favicon.png           # Brand favicon
 ```
 
-No secrets. The plugin only points at the hosted MCP; all credentials stay in the OAuth session.
+No secrets. Credentials stay in the OAuth session.

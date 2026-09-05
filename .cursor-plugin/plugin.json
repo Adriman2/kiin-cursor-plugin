@@ -1,7 +1,7 @@
 {
-  "name": "kiin-intelligence",
-  "version": "1.0.0",
-  "description": "LinkedIn Ads MCP by Kiin Intelligence \u2014 query campaigns, budgets, creatives, and CRM-linked revenue from your ad accounts.",
+  "name": "linkedin-ads-mcp-kiin",
+  "version": "1.1.0",
+  "description": "LinkedIn Ads MCP \u2014 powered by Kiin. Read performance and write campaigns, budgets, targeting, creatives, and audiences (every write is preview-then-confirm).",
   "author": {
     "name": "Kiin Intelligence",
     "email": "adrian@kiin.co"
@@ -13,7 +13,9 @@
     "linkedin",
     "ads",
     "mcp",
+    "linkedin-ads",
     "advertising",
+    "campaigns",
     "crm",
     "kiin",
     "marketing"
