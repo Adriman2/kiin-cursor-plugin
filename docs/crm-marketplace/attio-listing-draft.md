@@ -1,6 +1,6 @@
 # Attio App Store — listing draft (for Bart review)
 
-**Suggested app name:** LinkedIn Ads Sync — powered by Kiin  
+**App name (Bart approved):** LinkedIn Ads Sync — powered by Kiin  
 **Developer account name:** Kiin Intelligence (no “Attio”, no “dev/test”)  
 **Naming rules:** LinkedIn Ads–first; “powered by Kiin”; do **not** claim to be an official LinkedIn product or LinkedIn partner unless we have that.  
 **Publish:** https://build.attio.com → Publish app  
@@ -51,7 +51,8 @@ Privacy: https://kiin.co/privacy-policy
 Terms: https://web.kiin.co/terms  
 Support: adrian@kiin.co · phil@kiin.co  
 Website: https://kiin.co  
-Documentation: https://mcp.kiin.co/start (replace with a dedicated Attio setup URL before Publish)
+Documentation: https://kiin.co/integrations/attio  
+(Publish from attio-setup-guide.md before App Store Publish.)
 
 ---
 
@@ -61,7 +62,7 @@ Documentation: https://mcp.kiin.co/start (replace with a dedicated Attio setup U
 - [ ] App logo — same specs
 - [ ] 3–7 marketing images — 2960×1848, Attio + LinkedIn Ads influence story (not raw uncropped screenshots)
 - [ ] Walkthrough video — see `attio-walkthrough-script.md`
-- [ ] Stable public Attio setup guide URL (Configure section)
+- [ ] Publish https://kiin.co/integrations/attio from attio-setup-guide.md (Configure URL)
 - [ ] Privacy + Terms URLs live (done)
 - [ ] Redirect URI registered on build.attio.com to `https://mcp.kiin.co/auth/attio/callback`
 

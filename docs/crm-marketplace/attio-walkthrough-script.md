@@ -20,7 +20,7 @@ Show: `connect_attio` authorize URL or connect page → Attio consent (read scop
 
 **[1:30–2:15] Success + connection list**
 
-Say: “After approval, Kiin stores the connection and starts the first sync. Read-only on Attio — we don’t write back to records.”
+Say once, clearly on camera: “Attio access is read-only. Kiin does not create or edit Attio records. After approval we store the connection and start the first sync.”
 
 Show: success page → `list_crm_connections` with Attio active.
 

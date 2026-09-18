@@ -9,6 +9,7 @@ Partner **apps** for HubSpot / Attio / Pipedrive CRM connect (LinkedIn Ads influ
 |-----|---------|
 | [attio-listing-draft.md](./attio-listing-draft.md) | Overview / How it works / Configure + asset checklist |
 | [attio-walkthrough-script.md](./attio-walkthrough-script.md) | Spoken walkthrough script |
+| [attio-setup-guide.md](./attio-setup-guide.md) | Public setup page (publish to kiin.co/integrations/attio) |
 | [hubspot-parallel-status.md](./hubspot-parallel-status.md) | OAuth / connect-link / Tech Partner gaps |
 | [hubspot-listing-draft.md](./hubspot-listing-draft.md) | Marketplace listing draft |
 | [pipedrive-reconcile.md](./pipedrive-reconcile.md) | Repo vs Railway truth |
